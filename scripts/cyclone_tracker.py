@@ -173,8 +173,8 @@ def main():
     rounded_hour = (run.hour // 6) * 6
     if run.hour % 6 == 0 and run.minute < 40:
         rounded_hour = (rounded_hour - 6) % 24
-        run_date = (run.date() if rounded_hour != 18 else (run.date() - pd.Timedelta(days=1).to_pytimedelta()).date())
-    else:
+        run_date = (run - pd.Timedelta(days=1)).date() if run.hour < 6 else run.date()
+      else:
         run_date = run.date()
     run_date_str = run_date.strftime("%Y%m%d")
     models = [x.strip() for x in os.getenv("ECMWF_MODELS", "ifs,aifs").split(",") if x.strip()]
