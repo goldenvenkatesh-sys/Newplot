@@ -1,21 +1,88 @@
 {
   "project": "MASRAINMAN Bay of Bengal Cyclone Tracker",
-  "run_utc": "2026-10-24T00:38:44Z",
-  "run_ist": "2026-10-24T06:08:44+05:30",
+  "run_utc": "2026-10-24T00:45:03Z",
+  "run_ist": "2026-10-24T06:15:03+05:30",
   "ecmwf_cycle": {
-    "date": "20261023",
-    "hour_utc": 18
+    "date": "20261024",
+    "hour_utc": 0
   },
+  "configured_models": [
+    "ifs",
+    "aifs"
+  ],
+  "forecast_steps": [
+    0,
+    6,
+    12,
+    18,
+    24,
+    30,
+    36,
+    42,
+    48,
+    60,
+    72
+  ],
   "sources": [
+    {
+      "source": "ECMWF IFS",
+      "model": "ifs",
+      "status": "unavailable",
+      "files": [],
+      "decoded_fields": 0,
+      "errors": [
+        "Step 0: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/ifs/0p25/oper/20261024000000-0h-oper-fc.index",
+        "Step 6: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/ifs/0p25/oper/20261024000000-6h-oper-fc.index",
+        "Step 12: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/ifs/0p25/oper/20261024000000-12h-oper-fc.index",
+        "Step 18: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/ifs/0p25/oper/20261024000000-18h-oper-fc.index",
+        "Step 24: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/ifs/0p25/oper/20261024000000-24h-oper-fc.index",
+        "Step 30: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/ifs/0p25/oper/20261024000000-30h-oper-fc.index",
+        "Step 36: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/ifs/0p25/oper/20261024000000-36h-oper-fc.index",
+        "Step 42: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/ifs/0p25/oper/20261024000000-42h-oper-fc.index",
+        "Step 48: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/ifs/0p25/oper/20261024000000-48h-oper-fc.index",
+        "Step 60: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/ifs/0p25/oper/20261024000000-60h-oper-fc.index",
+        "Step 72: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/ifs/0p25/oper/20261024000000-72h-oper-fc.index"
+      ],
+      "cycle": {
+        "date": "20261024",
+        "hour_utc": 0
+      }
+    },
+    {
+      "source": "ECMWF AIFS",
+      "model": "aifs",
+      "status": "unavailable",
+      "files": [],
+      "decoded_fields": 0,
+      "errors": [
+        "Step 0: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/aifs/0p25/oper/20261024000000-0h-oper-fc.index",
+        "Step 6: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/aifs/0p25/oper/20261024000000-6h-oper-fc.index",
+        "Step 12: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/aifs/0p25/oper/20261024000000-12h-oper-fc.index",
+        "Step 18: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/aifs/0p25/oper/20261024000000-18h-oper-fc.index",
+        "Step 24: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/aifs/0p25/oper/20261024000000-24h-oper-fc.index",
+        "Step 30: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/aifs/0p25/oper/20261024000000-30h-oper-fc.index",
+        "Step 36: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/aifs/0p25/oper/20261024000000-36h-oper-fc.index",
+        "Step 42: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/aifs/0p25/oper/20261024000000-42h-oper-fc.index",
+        "Step 48: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/aifs/0p25/oper/20261024000000-48h-oper-fc.index",
+        "Step 60: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/aifs/0p25/oper/20261024000000-60h-oper-fc.index",
+        "Step 72: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/aifs/0p25/oper/20261024000000-72h-oper-fc.index"
+      ],
+      "cycle": {
+        "date": "20261024",
+        "hour_utc": 0
+      }
+    },
     {
       "source": "Google DeepMind WeatherNext 3",
       "status": "unavailable",
       "files": [],
-      "error": "WEATHERNEXT_EXPORT_URL is not configured.",
+      "errors": [
+        "WEATHERNEXT_EXPORT_URL is not configured."
+      ],
       "note": "Configure a permitted CSV/JSON export URL. No undocumented public API is assumed."
     }
   ],
   "probabilities": null,
-  "probability_note": "No probability is reported unless genuine ensemble data and a validated calculation are available.",
+  "probability_note": "No probability is calculated unless genuine ensemble members, a defined event and a validated calculation are available.",
   "warning": "Experimental visualization, not an official warning. Follow IMD bulletins."
 }
