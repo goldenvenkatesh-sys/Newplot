@@ -1,0 +1,21 @@
+{
+  "project": "MASRAINMAN Bay of Bengal Cyclone Tracker",
+  "run_utc": "2026-10-24T00:38:44Z",
+  "run_ist": "2026-10-24T06:08:44+05:30",
+  "ecmwf_cycle": {
+    "date": "20261023",
+    "hour_utc": 18
+  },
+  "sources": [
+    {
+      "source": "Google DeepMind WeatherNext 3",
+      "status": "unavailable",
+      "files": [],
+      "error": "WEATHERNEXT_EXPORT_URL is not configured.",
+      "note": "Configure a permitted CSV/JSON export URL. No undocumented public API is assumed."
+    }
+  ],
+  "probabilities": null,
+  "probability_note": "No probability is reported unless genuine ensemble data and a validated calculation are available.",
+  "warning": "Experimental visualization, not an official warning. Follow IMD bulletins."
+}
