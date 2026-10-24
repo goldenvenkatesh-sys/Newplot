@@ -1,12 +1,24 @@
 {
   "project": "MASRAINMAN Bay of Bengal Cyclone Tracker",
-  "run_utc": "2026-10-24T01:18:23Z",
-  "run_ist": "2026-10-24T06:48:23+05:30",
+  "run_utc": "2026-10-24T01:23:28Z",
+  "run_ist": "2026-10-24T06:53:28+05:30",
   "ecmwf_cycle": {
     "date": "20261024",
     "hour_utc": 0
   },
   "sources": [
+    {
+      "source": "ECMWF ifs",
+      "status": "unavailable",
+      "files": [],
+      "error": "Partial retrieval: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/ifs/0p25/oper/20261024000000-72h-oper-fc.index"
+    },
+    {
+      "source": "ECMWF aifs-single",
+      "status": "unavailable",
+      "files": [],
+      "error": "Partial retrieval: HTTPError: 404 Client Error: Not Found for url: https://data.ecmwf.int/forecasts/20261024/00z/aifs-single/0p25/oper/20261024000000-72h-oper-fc.index"
+    },
     {
       "source": "Google DeepMind WeatherNext 3",
       "status": "unavailable",
