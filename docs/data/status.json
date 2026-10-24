@@ -1,7 +1,7 @@
 {
   "project": "MASRAINMAN Bay of Bengal Cyclone Tracker",
-  "run_utc": "2026-10-24T21:01:17Z",
-  "run_ist": "2026-10-25T02:31:17+05:30",
+  "run_utc": "2026-10-24T23:28:17Z",
+  "run_ist": "2026-10-25T04:58:17+05:30",
   "ecmwf_cycle": {
     "date": "20261024",
     "hour_utc": 6
