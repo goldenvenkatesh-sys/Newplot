@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MASRAINMAN | Bay of Bengal Cyclone Tracker</title>
+<style>
+:root{color-scheme:light dark;--accent:#00a4bd}
+body{font:16px/1.5 system-ui,-apple-system,sans-serif;max-width:1100px;margin:auto;padding:20px;background:Canvas;color:CanvasText}
+header{border-bottom:1px solid #8886;padding-bottom:12px;margin-bottom:18px}
+h1{font-size:clamp(1.5rem,4vw,2.4rem);margin-bottom:4px}
+.muted{opacity:.75}.pill{display:inline-block;border:1px solid #8888;border-radius:999px;padding:3px 10px;margin:3px;font-size:.85rem}
+img{width:100%;height:auto;border-radius:12px;border:1px solid #8885}
+section{margin:20px 0}.source{padding:12px;border:1px solid #8885;border-radius:10px;margin:8px 0;overflow-wrap:anywhere}
+pre{white-space:pre-wrap;overflow-wrap:anywhere}
+footer{border-top:1px solid #8886;padding-top:12px;font-size:.9rem}
+</style>
+</head>
+<body>
+<header>
+<h1>MASRAINMAN | Bay of Bengal Cyclone Tracker</h1>
+<div class="muted">Automated forecast visualization • Experimental • Not an official warning</div>
+</header>
+<section>
+<h2>Latest forecast map</h2>
+<p class="muted" id="run">Loading latest run information…</p>
+<img src="data/latest.png" alt="Latest generated forecast map" onerror="this.alt='No forecast map has been generated yet';">
+</section>
+<section>
+<h2>Data sources</h2>
+<div id="sources">Loading source status…</div>
+</section>
+<section>
+<h2>Interpretation</h2>
+<p>Track lines and pressure contours are forecast guidance, not certainties. Probabilities are intentionally omitted unless supported by real ensemble/event data and a validated calculation. Model availability may vary by cycle.</p>
+<p><strong>Always follow India Meteorological Department (IMD) bulletins for official warnings.</strong></p>
+</section>
+<footer>MASRAINMAN • Data attribution and model run details are recorded in the status manifest.</footer>
+<script>
+fetch('data/status.json?ts='+Date.now()).then(r=>{if(!r.ok)throw Error('not generated');return r.json()}).then(d=>{
+ document.getElementById('run').textContent='Latest run: '+d.run_ist+' (IST) • ECMWF cycle: '+d.ecmwf_cycle.date+' '+String(d.ecmwf_cycle.hour_utc).padStart(2,'0')+' UTC';
+ document.getElementById('sources').innerHTML='';
+ d.sources.forEach(s=>{const div=document.createElement('div');div.className='source';const title=document.createElement('strong');title.textContent=s.source+' — '+s.status;div.appendChild(title);if(s.error){const p=document.createElement('p');p.textContent=s.error;div.appendChild(p)}if(s.note){const p=document.createElement('p');p.textContent=s.note;div.appendChild(p)}document.getElementById('sources').appendChild(div)});
+}).catch(()=>{document.getElementById('run').textContent='No run status found yet. Run the GitHub Actions workflow manually to initialize the dashboard.';document.getElementById('sources').textContent='No source status generated yet.'});
+</script>
+</body></html>

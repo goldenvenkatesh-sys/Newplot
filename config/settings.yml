@@ -1,0 +1,24 @@
+project:
+  title: "MASRAINMAN | Bay of Bengal Cyclone Tracker"
+  region:
+    north: 25.0
+    south: -2.0
+    west: 70.0
+    east: 105.0
+  output_dir: "docs"
+ecmwf:
+  # The script tries each configured model identifier independently.
+  # Actual availability depends on ECMWF Open Data catalogue and cycle.
+  models:
+    - "ifs"
+    - "aifs"
+  # Parameters: mean sea-level pressure and 10 m wind components.
+  # Retrieval can be large; keep forecast steps limited while validating.
+  steps: [0, 6, 12, 18, 24, 30, 36, 42, 48, 60, 72]
+  # Use only source products available to the account/catalogue.
+  type: "fc"
+  stream: "oper"
+  param: ["msl", "10u", "10v"]
+weather_next:
+  export_url_env: "WEATHERNEXT_EXPORT_URL"
+  token_env: "WEATHERNEXT_EXPORT_TOKEN"
