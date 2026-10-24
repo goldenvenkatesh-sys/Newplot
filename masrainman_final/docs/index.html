@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MASRAINMAN | Bay of Bengal Cyclone Tracker</title>
+<style>
+:root{color-scheme:light dark;--line:color-mix(in srgb,CanvasText 18%,transparent);--muted:color-mix(in srgb,CanvasText 72%,transparent)}
+*{box-sizing:border-box}body{font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:1180px;margin:auto;padding:clamp(14px,3vw,28px);background:Canvas;color:CanvasText}
+header{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:20px}h1{font-size:clamp(1.6rem,4vw,2.4rem);margin:0 0 5px}h2{font-size:1.25rem;margin:0 0 12px}.muted{color:var(--muted)}.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:3px 10px;margin:3px;font-size:.84rem}
+section,.panel{margin:18px 0;padding:16px;border:1px solid var(--line);border-radius:14px}img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}.source,.track{padding:12px;border:1px solid var(--line);border-radius:10px;margin:8px 0;overflow-wrap:anywhere}.source p,.track p{margin:5px 0}.good{color:#2da44e}.warn{color:#bf8700}.bad{color:#cf222e}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.85rem}footer{border-top:1px solid var(--line);padding-top:14px;font-size:.9rem;color:var(--muted)}a{color:LinkText}
+</style></head>
+<body>
+<header><h1>MASRAINMAN | Bay of Bengal Cyclone Tracker</h1><div class="muted">ECMWF IFS + AIFS deterministic guidance · Experimental · Not an official warning</div><div id="overall" class="pill">Loading status…</div><div id="run" class="muted">Loading latest run…</div></header>
+<section><h2>Latest forecast map</h2><img id="map" src="data/latest.png" alt="Latest mean sea-level pressure and candidate low tracks"><p class="muted" id="mapnote">Map will appear after the first successful forecast run.</p></section>
+<div class="grid"><section><h2>Model data status</h2><div id="sources">Loading source status…</div></section><section><h2>Candidate low tracks</h2><div id="tracks">Loading track diagnostics…</div><p class="muted">Tracks link local mean sea-level pressure minima between forecast times. They are not confirmation of tropical cyclones and are not probability forecasts.</p></section></div>
+<section><h2>Forecast metadata</h2><pre id="meta">Loading…</pre></section>
+<section><h2>Interpretation and safety</h2><p>Track lines and pressure contours are experimental deterministic model guidance. Candidate pressure minima may be non-tropical lows, troughs, or numerical features. No calibrated cyclone-track probabilities are calculated from two deterministic models.</p><p><strong>Always follow India Meteorological Department (IMD) bulletins for official warnings.</strong></p></section>
+<footer>MASRAINMAN · Forecast cycle, lead times, source status, and processing diagnostics are recorded in the status manifest.</footer>
+<script>
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+fetch('data/status.json?ts='+Date.now()).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(d=>{
+ const overall=document.getElementById('overall');overall.textContent='Overall: '+(d.overall_status||'unknown');overall.className='pill '+(d.overall_status==='success'?'good':d.overall_status==='failed'?'bad':'warn');
+ document.getElementById('run').textContent='Run: '+(d.run_ist||d.run_utc||'unknown')+' · Cycle: '+(d.ecmwf_cycle?.cycle_id||'unavailable')+' UTC';
+ document.getElementById('mapnote').textContent=d.plot?.status==='success'?`Map generated from ${d.plot.background_model||d.plot.model||'ECMWF'}; cycle ${d.plot.cycle||'unknown'} UTC. ${d.overall_message||''}`:(d.plot?.error||'No valid map generated.');
+ document.getElementById('sources').innerHTML=(d.sources||[]).map(s=>`<div class="source"><strong>${esc(s.source)} — ${esc(s.status)}</strong>${s.cycle?`<p>Cycle: ${esc(s.cycle)} UTC</p>`:''}${s.note?`<p>${esc(s.note)}</p>`:''}${s.error?`<p class="bad">${esc(s.error)}</p>`:''}</div>`).join('')||'No source status recorded.';
+ const trs=d.tracks||[];let html='';for(const model of trs){html+=`<h3>${esc(model.model)} · ${esc(model.cycle||'cycle unavailable')}</h3>`;if(!model.tracks?.length){html+='<p>No persistent candidate low tracks met the configured minimum length.</p>';continue;}for(const t of model.tracks){const first=t.points?.[0],last=t.points?.[t.points.length-1];html+=`<div class="track"><strong>${esc(t.track_id)}</strong><p>${t.points.length} points · minimum MSLP ${esc(t.min_mslp_hpa)} hPa</p><p>Start: ${first?esc(first.lat.toFixed(2)+', '+first.lon.toFixed(2)+' at T+'+first.step+'h'):'—'}</p><p>Latest: ${last?esc(last.lat.toFixed(2)+', '+last.lon.toFixed(2)+' at T+'+last.step+'h'):'—'}</p></div>`;}}document.getElementById('tracks').innerHTML=html||'No track diagnostics available.';
+ document.getElementById('meta').textContent=JSON.stringify({overall_status:d.overall_status,overall_message:d.overall_message,forecast_steps_requested:d.forecast_steps_requested,models:(d.models||[]).map(m=>({model:m.model,status:m.status,cycle:m.cycle,steps_successful:m.steps_successful,steps_failed:m.steps_failed})),track_method:d.track_method,probabilities:d.probabilities,notes:d.notes},null,2);
+}).catch(e=>{document.getElementById('run').textContent='Could not load status.json: '+e.message;document.getElementById('sources').textContent='No source status available.';document.getElementById('tracks').textContent='No track diagnostics available.';document.getElementById('meta').textContent='Run the GitHub Actions workflow and inspect its logs.'});
+</script></body></html>
