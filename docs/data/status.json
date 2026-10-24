@@ -1,189 +1,21 @@
 {
   "project": "MASRAINMAN Bay of Bengal Cyclone Tracker",
-  "run_utc": "2026-10-24T00:51:43.807358Z",
-  "run_ist": "2026-10-24T06:21:43.807358+05:30",
-  "configured_models": [
-    "ifs",
-    "aifs-single"
-  ],
-  "forecast_steps_requested": [
-    0,
-    6,
-    12,
-    18,
-    24,
-    30,
-    36,
-    42,
-    48,
-    60,
-    72
-  ],
-  "candidate_cycles": [
-    "2026102318",
-    "2026102312",
-    "2026102306",
-    "2026102300",
-    "2026102218"
-  ],
-  "cycle_selection": {
-    "minimum_age_hours": 6,
-    "fallback_cycles": 4
+  "run_utc": "2026-10-24T01:18:23Z",
+  "run_ist": "2026-10-24T06:48:23+05:30",
+  "ecmwf_cycle": {
+    "date": "20261024",
+    "hour_utc": 0
   },
-  "models": [
+  "sources": [
     {
-      "model": "ifs",
-      "status": "success",
-      "cycle": "2026102318",
-      "files": [
-        "data/raw/ifs_2026102318_step000.grib2",
-        "data/raw/ifs_2026102318_step006.grib2",
-        "data/raw/ifs_2026102318_step012.grib2",
-        "data/raw/ifs_2026102318_step018.grib2",
-        "data/raw/ifs_2026102318_step024.grib2",
-        "data/raw/ifs_2026102318_step030.grib2",
-        "data/raw/ifs_2026102318_step036.grib2",
-        "data/raw/ifs_2026102318_step042.grib2",
-        "data/raw/ifs_2026102318_step048.grib2",
-        "data/raw/ifs_2026102318_step060.grib2",
-        "data/raw/ifs_2026102318_step072.grib2"
-      ],
-      "steps_requested": [
-        0,
-        6,
-        12,
-        18,
-        24,
-        30,
-        36,
-        42,
-        48,
-        60,
-        72
-      ],
-      "steps_successful": [
-        0,
-        6,
-        12,
-        18,
-        24,
-        30,
-        36,
-        42,
-        48,
-        60,
-        72
-      ],
-      "steps_failed": [],
-      "cycle_attempts": [
-        {
-          "cycle": "2026102318",
-          "successful_steps": [
-            0,
-            6,
-            12,
-            18,
-            24,
-            30,
-            36,
-            42,
-            48,
-            60,
-            72
-          ],
-          "failed_steps": []
-        }
-      ],
-      "error": null
-    },
-    {
-      "model": "aifs-single",
-      "status": "success",
-      "cycle": "2026102318",
-      "files": [
-        "data/raw/aifs-single_2026102318_step000.grib2",
-        "data/raw/aifs-single_2026102318_step006.grib2",
-        "data/raw/aifs-single_2026102318_step012.grib2",
-        "data/raw/aifs-single_2026102318_step018.grib2",
-        "data/raw/aifs-single_2026102318_step024.grib2",
-        "data/raw/aifs-single_2026102318_step030.grib2",
-        "data/raw/aifs-single_2026102318_step036.grib2",
-        "data/raw/aifs-single_2026102318_step042.grib2",
-        "data/raw/aifs-single_2026102318_step048.grib2",
-        "data/raw/aifs-single_2026102318_step060.grib2",
-        "data/raw/aifs-single_2026102318_step072.grib2"
-      ],
-      "steps_requested": [
-        0,
-        6,
-        12,
-        18,
-        24,
-        30,
-        36,
-        42,
-        48,
-        60,
-        72
-      ],
-      "steps_successful": [
-        0,
-        6,
-        12,
-        18,
-        24,
-        30,
-        36,
-        42,
-        48,
-        60,
-        72
-      ],
-      "steps_failed": [],
-      "cycle_attempts": [
-        {
-          "cycle": "2026102318",
-          "successful_steps": [
-            0,
-            6,
-            12,
-            18,
-            24,
-            30,
-            36,
-            42,
-            48,
-            60,
-            72
-          ],
-          "failed_steps": []
-        }
-      ],
-      "error": null
+      "source": "Google DeepMind WeatherNext 3",
+      "status": "unavailable",
+      "files": [],
+      "error": "WEATHERNEXT_EXPORT_URL is not configured.",
+      "note": "No undocumented API is assumed. Configure a permitted CSV/JSON export URL."
     }
   ],
-  "weathernext3": {
-    "status": "unavailable",
-    "error": "WEATHERNEXT_EXPORT_URL is not configured."
-  },
-  "plot": {
-    "path": "docs/data/latest.png",
-    "status": "success",
-    "model": "ifs",
-    "cycle": "2026102318",
-    "step": 0,
-    "valid_source_file": "data/raw/ifs_2026102318_step000.grib2"
-  },
   "probabilities": null,
-  "cyclone_tracks": null,
-  "notes": [
-    "MSLP contours are not cyclone-track probabilities.",
-    "No cyclone track is inferred from pressure contours alone.",
-    "WeatherNext endpoint reachability does not mean its data has been integrated."
-  ],
-  "finished_utc": "2026-10-24T00:52:23.582690Z",
-  "finished_ist": "2026-10-24T06:22:23.582690+05:30",
-  "duration_seconds": 39.78,
-  "overall_status": "success",
-  "overall_message": "Forecast data was retrieved and an MSLP plot was generated."
+  "probability_note": "No probability is reported unless genuine ensemble/event data and a validated calculation are available.",
+  "warning": "Experimental visualization, not an official warning. Follow IMD bulletins."
 }
