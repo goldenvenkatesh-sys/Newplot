@@ -1,27 +1,27 @@
 {
   "project": "MASRAINMAN Bay of Bengal Cyclone Tracker",
-  "run_utc": "2026-10-25T11:51:30Z",
-  "run_ist": "2026-10-25T17:21:30+05:30",
+  "run_utc": "2026-10-25T16:38:21Z",
+  "run_ist": "2026-10-25T22:08:21+05:30",
   "ecmwf_cycle": {
-    "date": "20261024",
-    "hour_utc": 18
+    "date": "20261025",
+    "hour_utc": 0
   },
   "sources": [
     {
       "source": "ECMWF ifs",
       "status": "available",
       "files": [
-        "data/raw/ifs_20261024_18/ifs_20261024_18_step000.grib2",
-        "data/raw/ifs_20261024_18/ifs_20261024_18_step006.grib2",
-        "data/raw/ifs_20261024_18/ifs_20261024_18_step012.grib2",
-        "data/raw/ifs_20261024_18/ifs_20261024_18_step018.grib2",
-        "data/raw/ifs_20261024_18/ifs_20261024_18_step024.grib2",
-        "data/raw/ifs_20261024_18/ifs_20261024_18_step030.grib2",
-        "data/raw/ifs_20261024_18/ifs_20261024_18_step036.grib2",
-        "data/raw/ifs_20261024_18/ifs_20261024_18_step042.grib2",
-        "data/raw/ifs_20261024_18/ifs_20261024_18_step048.grib2",
-        "data/raw/ifs_20261024_18/ifs_20261024_18_step060.grib2",
-        "data/raw/ifs_20261024_18/ifs_20261024_18_step072.grib2"
+        "data/raw/ifs_20261025_00/ifs_20261025_00_step000.grib2",
+        "data/raw/ifs_20261025_00/ifs_20261025_00_step006.grib2",
+        "data/raw/ifs_20261025_00/ifs_20261025_00_step012.grib2",
+        "data/raw/ifs_20261025_00/ifs_20261025_00_step018.grib2",
+        "data/raw/ifs_20261025_00/ifs_20261025_00_step024.grib2",
+        "data/raw/ifs_20261025_00/ifs_20261025_00_step030.grib2",
+        "data/raw/ifs_20261025_00/ifs_20261025_00_step036.grib2",
+        "data/raw/ifs_20261025_00/ifs_20261025_00_step042.grib2",
+        "data/raw/ifs_20261025_00/ifs_20261025_00_step048.grib2",
+        "data/raw/ifs_20261025_00/ifs_20261025_00_step060.grib2",
+        "data/raw/ifs_20261025_00/ifs_20261025_00_step072.grib2"
       ],
       "error": null
     },
@@ -29,17 +29,17 @@
       "source": "ECMWF aifs-single",
       "status": "available",
       "files": [
-        "data/raw/aifs-single_20261024_18/aifs-single_20261024_18_step000.grib2",
-        "data/raw/aifs-single_20261024_18/aifs-single_20261024_18_step006.grib2",
-        "data/raw/aifs-single_20261024_18/aifs-single_20261024_18_step012.grib2",
-        "data/raw/aifs-single_20261024_18/aifs-single_20261024_18_step018.grib2",
-        "data/raw/aifs-single_20261024_18/aifs-single_20261024_18_step024.grib2",
-        "data/raw/aifs-single_20261024_18/aifs-single_20261024_18_step030.grib2",
-        "data/raw/aifs-single_20261024_18/aifs-single_20261024_18_step036.grib2",
-        "data/raw/aifs-single_20261024_18/aifs-single_20261024_18_step042.grib2",
-        "data/raw/aifs-single_20261024_18/aifs-single_20261024_18_step048.grib2",
-        "data/raw/aifs-single_20261024_18/aifs-single_20261024_18_step060.grib2",
-        "data/raw/aifs-single_20261024_18/aifs-single_20261024_18_step072.grib2"
+        "data/raw/aifs-single_20261025_00/aifs-single_20261025_00_step000.grib2",
+        "data/raw/aifs-single_20261025_00/aifs-single_20261025_00_step006.grib2",
+        "data/raw/aifs-single_20261025_00/aifs-single_20261025_00_step012.grib2",
+        "data/raw/aifs-single_20261025_00/aifs-single_20261025_00_step018.grib2",
+        "data/raw/aifs-single_20261025_00/aifs-single_20261025_00_step024.grib2",
+        "data/raw/aifs-single_20261025_00/aifs-single_20261025_00_step030.grib2",
+        "data/raw/aifs-single_20261025_00/aifs-single_20261025_00_step036.grib2",
+        "data/raw/aifs-single_20261025_00/aifs-single_20261025_00_step042.grib2",
+        "data/raw/aifs-single_20261025_00/aifs-single_20261025_00_step048.grib2",
+        "data/raw/aifs-single_20261025_00/aifs-single_20261025_00_step060.grib2",
+        "data/raw/aifs-single_20261025_00/aifs-single_20261025_00_step072.grib2"
       ],
       "error": null
     },
