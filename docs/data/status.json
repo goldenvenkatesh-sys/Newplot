@@ -1,47 +1,46 @@
 {
   "project": "MASRAINMAN Bay of Bengal Cyclone Tracker",
-  "run_utc": "2026-10-27T00:42:55Z",
-  "run_ist": "2026-10-27T06:12:55+05:30",
+  "run_utc": "2026-10-27T09:13:12Z",
+  "run_ist": "2026-10-27T14:43:12+05:30",
   "ecmwf_cycle": {
     "date": "20261026",
-    "hour_utc": 12
+    "hour_utc": 18
   },
   "sources": [
     {
       "source": "ECMWF ifs",
       "status": "available",
       "files": [
-        "data/raw/ifs_20261026_12/ifs_20261026_12_step000.grib2",
-        "data/raw/ifs_20261026_12/ifs_20261026_12_step006.grib2",
-        "data/raw/ifs_20261026_12/ifs_20261026_12_step012.grib2",
-        "data/raw/ifs_20261026_12/ifs_20261026_12_step018.grib2",
-        "data/raw/ifs_20261026_12/ifs_20261026_12_step024.grib2",
-        "data/raw/ifs_20261026_12/ifs_20261026_12_step030.grib2",
-        "data/raw/ifs_20261026_12/ifs_20261026_12_step036.grib2",
-        "data/raw/ifs_20261026_12/ifs_20261026_12_step042.grib2",
-        "data/raw/ifs_20261026_12/ifs_20261026_12_step048.grib2",
-        "data/raw/ifs_20261026_12/ifs_20261026_12_step060.grib2",
-        "data/raw/ifs_20261026_12/ifs_20261026_12_step072.grib2"
+        "data/raw/ifs_20261026_18/ifs_20261026_18_step000.grib2",
+        "data/raw/ifs_20261026_18/ifs_20261026_18_step006.grib2",
+        "data/raw/ifs_20261026_18/ifs_20261026_18_step012.grib2",
+        "data/raw/ifs_20261026_18/ifs_20261026_18_step018.grib2",
+        "data/raw/ifs_20261026_18/ifs_20261026_18_step024.grib2",
+        "data/raw/ifs_20261026_18/ifs_20261026_18_step030.grib2",
+        "data/raw/ifs_20261026_18/ifs_20261026_18_step036.grib2",
+        "data/raw/ifs_20261026_18/ifs_20261026_18_step042.grib2",
+        "data/raw/ifs_20261026_18/ifs_20261026_18_step048.grib2",
+        "data/raw/ifs_20261026_18/ifs_20261026_18_step060.grib2",
+        "data/raw/ifs_20261026_18/ifs_20261026_18_step072.grib2"
       ],
       "error": null
     },
     {
       "source": "ECMWF aifs-single",
-      "status": "available",
+      "status": "partial",
       "files": [
-        "data/raw/aifs-single_20261026_12/aifs-single_20261026_12_step000.grib2",
-        "data/raw/aifs-single_20261026_12/aifs-single_20261026_12_step006.grib2",
-        "data/raw/aifs-single_20261026_12/aifs-single_20261026_12_step012.grib2",
-        "data/raw/aifs-single_20261026_12/aifs-single_20261026_12_step018.grib2",
-        "data/raw/aifs-single_20261026_12/aifs-single_20261026_12_step024.grib2",
-        "data/raw/aifs-single_20261026_12/aifs-single_20261026_12_step030.grib2",
-        "data/raw/aifs-single_20261026_12/aifs-single_20261026_12_step036.grib2",
-        "data/raw/aifs-single_20261026_12/aifs-single_20261026_12_step042.grib2",
-        "data/raw/aifs-single_20261026_12/aifs-single_20261026_12_step048.grib2",
-        "data/raw/aifs-single_20261026_12/aifs-single_20261026_12_step060.grib2",
-        "data/raw/aifs-single_20261026_12/aifs-single_20261026_12_step072.grib2"
+        "data/raw/aifs-single_20261026_18/aifs-single_20261026_18_step000.grib2",
+        "data/raw/aifs-single_20261026_18/aifs-single_20261026_18_step006.grib2",
+        "data/raw/aifs-single_20261026_18/aifs-single_20261026_18_step012.grib2",
+        "data/raw/aifs-single_20261026_18/aifs-single_20261026_18_step018.grib2",
+        "data/raw/aifs-single_20261026_18/aifs-single_20261026_18_step024.grib2",
+        "data/raw/aifs-single_20261026_18/aifs-single_20261026_18_step030.grib2",
+        "data/raw/aifs-single_20261026_18/aifs-single_20261026_18_step036.grib2",
+        "data/raw/aifs-single_20261026_18/aifs-single_20261026_18_step042.grib2",
+        "data/raw/aifs-single_20261026_18/aifs-single_20261026_18_step048.grib2",
+        "data/raw/aifs-single_20261026_18/aifs-single_20261026_18_step060.grib2"
       ],
-      "error": null
+      "error": "step 72: ChunkedEncodingError: ('Connection broken: IncompleteRead(1048576 bytes read, 575762 more expected)', IncompleteRead(1048576 bytes read, 575762 more expected))"
     },
     {
       "source": "Google DeepMind WeatherNext 3",
